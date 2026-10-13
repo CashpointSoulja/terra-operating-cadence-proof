@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Operating Cadence Proof · an independent concept by Ayo Ahmed</title>
+<meta name="description" content="Synthetic vendor onboarding gate and weekly leadership operating brief. Independent concept by Ayo Ahmed, not affiliated with Terra Industries.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/styles.css">
+<script type="module" src="/app.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="wrap">
+  <div class="identity"><span class="product">Operating Cadence Proof</span><span class="author">An independent concept by Ayo Ahmed</span></div>
+  <div class="brand-secondary"><img src="/brand/terra-wordmark.svg" alt="Terra wordmark" width="92" height="24"><span class="unofficial">Unofficial · not affiliated with or endorsed by Terra Industries</span></div>
+</div></header>
+<main id="main" class="wrap rails">
+  <section class="hero">
+    <p class="eyebrow">Civilian office administration · synthetic data</p>
+    <h1 class="display">Vendor onboarding gate and the weekly operating brief</h1>
+    <p class="lede">A fictional office-services vendor can only be onboarded when its signed agreement, approved cost in GBP, accountable owner, current approvals and critical checklist all hold. The same workspace tracks milestones, late actions and owner follow-through, and issues a versioned weekly brief with explicit denominators.</p>
+    <div class="toolbar">
+      <span class="rev" id="rev">loading…</span>
+      <span class="rev" id="asof"></span>
+      <button class="btn secondary" id="reset" type="button">Reset to baseline</button>
+    </div>
+    <div class="banner">Simulated onboarding only. No payment is made, no vendor is contacted, and nothing here is legal or financial advice. Every person, vendor and figure is fictional.</div>
+  </section>
+
+  <section class="section" aria-labelledby="h-vendor">
+    <p class="eyebrow">1 · Vendor onboarding</p>
+    <h2 id="h-vendor">Halden &amp; Rowe gate</h2>
+    <div class="grid workbench">
+      <div class="panel">
+        <h3>Vendor record</h3>
+        <p class="muted small">Material fields. Changing any of them changes the fingerprint, and approvals bound to the old fingerprint stop counting.</p>
+        <form id="vendor-form" class="form-grid" novalidate>
+          <label class="field wide">Legal name<input name="legalName" maxlength="80" autocomplete="off"></label>
+          <label class="field wide">Scope<textarea name="scope" maxlength="240" rows="2"></textarea></label>
+          <label class="field">Accountable owner<select name="ownerId"></select></label>
+          <label class="field">Service category<select name="serviceCategory"></select></label>
+          <label class="field">Cost amount<input name="amount" inputmode="decimal" autocomplete="off"></label>
+          <label class="field">Currency<select name="currency"></select></label>
+          <label class="field">Period<select name="period"></select></label>
+          <label class="field">Agreement ref<input name="docRef" maxlength="40" autocomplete="off"></label>
+          <label class="field">Agreement version<input name="version" inputmode="numeric" autocomplete="off"></label>
+          <label class="field">Signed on<input name="signedOn" type="date"></label>
+          <label class="field">Expires on<input name="expiresOn" type="date"></label>
+          <label class="field">Signed by<select name="signedBy"></select></label>
+          <div class="btn-row wide"><button class="btn" type="submit" id="save-vendor">Save vendor changes</button></div>
+        </form>
+        <h3>Approvals</h3>
+        <ul class="reasons" id="approvals"></ul>
+        <form id="approval-form" class="form-grid" novalidate>
+          <label class="field">Role<select name="role"><option value="budget_owner">Budget owner</option><option value="finance_lead">Finance lead</option></select></label>
+          <label class="field">Approver<select name="approverId"></select></label>
+          <label class="field">Approved on<input name="approvedOn" type="date"></label>
+          <div class="btn-row"><button class="btn" type="submit" id="approve">Record approval</button></div>
+        </form>
+        <h3>Onboarding checklist</h3>
+        <ul class="checklist" id="checklist"></ul>
+      </div>
+      <div class="card gate" aria-live="polite">
+        <div class="gate-head"><h3>Gate result</h3><span id="gate-chip" class="chip neutral">—</span></div>
+        <p class="frac-line"><span id="gate-frac" class="frac">—</span> <span class="muted small">checks passed. Every critical check must pass; the count alone never unblocks.</span></p>
+        <p class="small muted">Cost <strong id="gate-cost"></strong> · annualised <strong id="gate-annual"></strong> · approvals required: <strong id="gate-roles"></strong></p>
+        <h3>Blockers</h3>
+        <ul class="reasons" id="blockers"></ul>
+        <h3 id="warnings-h">Warnings</h3>
+        <ul class="reasons" id="warnings"></ul>
+        <h3>Onboarding</h3>
+        <p id="onboarding-state"></p>
+        <div class="btn-row"><button class="btn" type="button" id="onboard">Onboard (simulated)</button></div>
+        <p class="rev" id="fingerprint"></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="h-cadence">
+    <p class="eyebrow">2 · Weekly cadence</p>
+    <h2 id="h-cadence">Milestones, actions and follow-through</h2>
+    <div class="kpis" id="kpis"></div>
+    <h3>Milestones</h3>
+    <table class="rows" id="milestones"><thead><tr><th>Milestone</th><th>Owner</th><th>Due</th><th>Status</th><th><span class="sr-only">Change</span></th></tr></thead><tbody></tbody></table>
+    <h3>Actions</h3>
+    <table class="rows" id="actions"><thead><tr><th>Action</th><th>Owner</th><th>Due</th><th>State</th><th><span class="sr-only">Change</span></th></tr></thead><tbody></tbody></table>
+    <form id="action-form" class="form-grid inline" novalidate>
+      <label class="field wide">New action<input name="title" maxlength="120" autocomplete="off" placeholder="e.g. Confirm cleaning rota with building manager"></label>
+      <label class="field">Owner<select name="ownerId"></select></label>
+      <label class="field">Due<input name="dueOn" type="date"></label>
+      <div class="btn-row"><button class="btn secondary" type="submit">Add action</button></div>
+    </form>
+    <h3>Owner follow-through</h3>
+    <p class="muted small">Actions due on or before the reporting date. A rate is only read once an owner has at least 3 due; below that it is a hold, not a score.</p>
+    <table class="rows" id="follow"><thead><tr><th>Owner</th><th>Due</th><th>On time</th><th>Late</th><th>Overdue open</th><th>Reading</th></tr></thead><tbody></tbody></table>
+  </section>
+
+  <section class="section" aria-labelledby="h-brief">
+    <p class="eyebrow">3 · Weekly operating brief</p>
+    <div class="gate-head"><h2 id="h-brief">Brief <span class="mono" id="brief-id"></span></h2><span id="brief-chip" class="chip neutral">Draft</span></div>
+    <p class="muted small" id="brief-note"></p>
+    <div class="grid two">
+      <div class="card"><h3>Unknowns</h3><ul class="plain" id="unknowns"></ul></div>
+      <div class="card"><h3>Decisions requested</h3><ul class="plain" id="decisions"></ul></div>
+    </div>
+    <div class="btn-row"><button class="btn" type="button" id="issue">Issue this brief</button></div>
+  </section>
+
+  <section class="section" aria-labelledby="h-export">
+    <p class="eyebrow">4 · Exports</p>
+    <h2 id="h-export">Audit and board material</h2>
+    <p class="muted small">Board material only exports for an issued brief that still matches the workspace. The audit export always works and records what changed.</p>
+    <div class="btn-row">
+      <button class="btn secondary" type="button" data-export="/api/export/audit.json">Export audit JSON</button>
+      <button class="btn secondary" type="button" data-export="/api/export/board.json">Export board-material JSON</button>
+      <button class="btn secondary" type="button" data-export="/api/export/summary.md">Export readable summary</button>
+    </div>
+    <pre class="export" id="export-preview" tabindex="0" aria-label="Export preview">Choose an export to preview it here.</pre>
+  </section>
+
+  <section class="section" aria-labelledby="h-log">
+    <p class="eyebrow">5 · Audit trail</p>
+    <h2 id="h-log">Recent events</h2>
+    <ol class="log" id="events"></ol>
+  </section>
+</main>
+<footer class="site-footer"><div class="wrap">Synthetic data only. Simulated onboarding, no payment, no legal advice. Independent concept by Ayo Ahmed. Not affiliated with or endorsed by Terra Industries; the Terra wordmark belongs to its owner.</div></footer>
+<div class="toast hidden" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

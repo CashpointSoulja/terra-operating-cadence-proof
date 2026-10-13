@@ -1,0 +1,20 @@
+{
+  // Cloudflare Workers Free: one Worker, static assets, SQLite-backed Durable Objects (no paid bindings).
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "terra-operating-cadence-proof",
+  "main": "src/worker.ts",
+  "compatibility_date": "2026-10-01",
+  "workers_dev": true,
+  "preview_urls": false,
+  "assets": {
+    "directory": "public",
+    "binding": "ASSETS",
+    "not_found_handling": "404-page",
+    "run_worker_first": true
+  },
+  "durable_objects": {
+    "bindings": [{ "name": "WORKSPACE", "class_name": "Workspace" }]
+  },
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["Workspace"] }],
+  "observability": { "enabled": false }
+}

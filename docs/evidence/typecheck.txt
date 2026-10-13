@@ -1,0 +1,2 @@
+$ npm run typecheck
+tsc: 0 errors

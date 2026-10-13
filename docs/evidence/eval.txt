@@ -1,0 +1,22 @@
+PASS  E01 Baseline: critical bank call-back still open   [control: MISS]
+PASS  E02 All critical steps done, current approval   [control: match]
+PASS  E03 Simulated onboarding once ready   [control: match]
+PASS  E04 Material cost change after onboarding   [control: MISS]
+PASS  E05 Recovery: budget-owner and finance-lead re-approve new record   [control: match]
+PASS  E06 Partial recovery: only budget owner re-approves   [control: MISS]
+PASS  E07 Approval older than 90 days   [control: MISS]
+PASS  E08 Cost quoted in EUR   [control: MISS]
+PASS  E09 Agreement expired   [control: MISS]
+PASS  E10 Accountable owner removed   [control: match]
+PASS  E11 Approval revoked   [control: match]
+PASS  E12 Approver without budget authority
+PASS  E13 Owner approves own vendor
+PASS  E14 Approval dated after the reporting date
+PASS  E15 Approval for a record the approver did not see
+PASS  E16 Onboarding attempted while blocked
+PASS  E17 Baseline KPI denominators
+PASS  E18 Board export before any brief is issued
+PASS  E19 Board export after issue then a change
+PASS  E20 Board export for the issued current brief
+
+engine 20/20; negative control matched 5/11 (caught on 6)

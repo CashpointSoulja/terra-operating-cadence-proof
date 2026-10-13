@@ -1,0 +1,360 @@
+{
+  "engine": {
+    "passed": 20,
+    "total": 20
+  },
+  "negativeControl": {
+    "passed": 5,
+    "total": 11,
+    "caught": 6
+  },
+  "rows": [
+    {
+      "id": "E01",
+      "title": "Baseline: critical bank call-back still open",
+      "expected": {
+        "gate": "blocked",
+        "blockersExactly": [
+          "checklist_critical_open"
+        ],
+        "onboarding": "not_started"
+      },
+      "actual": {
+        "gate": "blocked",
+        "blockersExactly": [
+          "checklist_critical_open"
+        ],
+        "onboarding": "not_started"
+      },
+      "pass": true,
+      "naive": {
+        "expected": "blocked",
+        "actual": "ready",
+        "pass": false
+      }
+    },
+    {
+      "id": "E02",
+      "title": "All critical steps done, current approval",
+      "expected": {
+        "gate": "ready",
+        "blockersExactly": []
+      },
+      "actual": {
+        "gate": "ready",
+        "blockersExactly": []
+      },
+      "pass": true,
+      "naive": {
+        "expected": "ready",
+        "actual": "ready",
+        "pass": true
+      }
+    },
+    {
+      "id": "E03",
+      "title": "Simulated onboarding once ready",
+      "expected": {
+        "gate": "ready",
+        "onboarding": "onboarded"
+      },
+      "actual": {
+        "gate": "ready",
+        "onboarding": "onboarded"
+      },
+      "pass": true,
+      "naive": {
+        "expected": "ready",
+        "actual": "ready",
+        "pass": true
+      }
+    },
+    {
+      "id": "E04",
+      "title": "Material cost change after onboarding",
+      "expected": {
+        "gate": "blocked",
+        "blockersExactly": [
+          "approval_stale",
+          "approval_missing"
+        ],
+        "onboarding": "invalidated"
+      },
+      "actual": {
+        "gate": "blocked",
+        "blockersExactly": [
+          "approval_stale",
+          "approval_missing"
+        ],
+        "onboarding": "invalidated"
+      },
+      "pass": true,
+      "naive": {
+        "expected": "blocked",
+        "actual": "ready",
+        "pass": false
+      }
+    },
+    {
+      "id": "E05",
+      "title": "Recovery: budget-owner and finance-lead re-approve new record",
+      "expected": {
+        "gate": "ready",
+        "onboarding": "onboarded"
+      },
+      "actual": {
+        "gate": "ready",
+        "onboarding": "onboarded"
+      },
+      "pass": true,
+      "naive": {
+        "expected": "ready",
+        "actual": "ready",
+        "pass": true
+      }
+    },
+    {
+      "id": "E06",
+      "title": "Partial recovery: only budget owner re-approves",
+      "expected": {
+        "gate": "blocked",
+        "blockersExactly": [
+          "approval_missing"
+        ]
+      },
+      "actual": {
+        "gate": "blocked",
+        "blockersExactly": [
+          "approval_missing"
+        ]
+      },
+      "pass": true,
+      "naive": {
+        "expected": "blocked",
+        "actual": "ready",
+        "pass": false
+      }
+    },
+    {
+      "id": "E07",
+      "title": "Approval older than 90 days",
+      "expected": {
+        "gate": "blocked",
+        "blockersInclude": [
+          "approval_expired"
+        ]
+      },
+      "actual": {
+        "gate": "blocked",
+        "blockersInclude": [
+          "approval_expired"
+        ]
+      },
+      "pass": true,
+      "naive": {
+        "expected": "blocked",
+        "actual": "ready",
+        "pass": false
+      }
+    },
+    {
+      "id": "E08",
+      "title": "Cost quoted in EUR",
+      "expected": {
+        "gate": "blocked",
+        "blockersInclude": [
+          "currency_not_home",
+          "approval_stale"
+        ]
+      },
+      "actual": {
+        "gate": "blocked",
+        "blockersInclude": [
+          "currency_not_home",
+          "approval_stale"
+        ]
+      },
+      "pass": true,
+      "naive": {
+        "expected": "blocked",
+        "actual": "ready",
+        "pass": false
+      }
+    },
+    {
+      "id": "E09",
+      "title": "Agreement expired",
+      "expected": {
+        "gate": "blocked",
+        "blockersInclude": [
+          "agreement_expired"
+        ]
+      },
+      "actual": {
+        "gate": "blocked",
+        "blockersInclude": [
+          "agreement_expired"
+        ]
+      },
+      "pass": true,
+      "naive": {
+        "expected": "blocked",
+        "actual": "ready",
+        "pass": false
+      }
+    },
+    {
+      "id": "E10",
+      "title": "Accountable owner removed",
+      "expected": {
+        "gate": "blocked",
+        "blockersInclude": [
+          "owner_missing"
+        ]
+      },
+      "actual": {
+        "gate": "blocked",
+        "blockersInclude": [
+          "owner_missing"
+        ]
+      },
+      "pass": true,
+      "naive": {
+        "expected": "blocked",
+        "actual": "blocked",
+        "pass": true
+      }
+    },
+    {
+      "id": "E11",
+      "title": "Approval revoked",
+      "expected": {
+        "gate": "blocked",
+        "blockersExactly": [
+          "approval_missing"
+        ]
+      },
+      "actual": {
+        "gate": "blocked",
+        "blockersExactly": [
+          "approval_missing"
+        ]
+      },
+      "pass": true,
+      "naive": {
+        "expected": "blocked",
+        "actual": "blocked",
+        "pass": true
+      }
+    },
+    {
+      "id": "E12",
+      "title": "Approver without budget authority",
+      "expected": {
+        "refusedWith": "approver_not_authorised"
+      },
+      "actual": {
+        "refusedWith": "approver_not_authorised"
+      },
+      "pass": true
+    },
+    {
+      "id": "E13",
+      "title": "Owner approves own vendor",
+      "expected": {
+        "refusedWith": "approver_is_owner"
+      },
+      "actual": {
+        "refusedWith": "approver_is_owner"
+      },
+      "pass": true
+    },
+    {
+      "id": "E14",
+      "title": "Approval dated after the reporting date",
+      "expected": {
+        "refusedWith": "future_date"
+      },
+      "actual": {
+        "refusedWith": "future_date"
+      },
+      "pass": true
+    },
+    {
+      "id": "E15",
+      "title": "Approval for a record the approver did not see",
+      "expected": {
+        "refusedWith": "fingerprint_mismatch"
+      },
+      "actual": {
+        "refusedWith": "fingerprint_mismatch"
+      },
+      "pass": true
+    },
+    {
+      "id": "E16",
+      "title": "Onboarding attempted while blocked",
+      "expected": {
+        "refusedWith": "gate_blocked"
+      },
+      "actual": {
+        "refusedWith": "gate_blocked"
+      },
+      "pass": true
+    },
+    {
+      "id": "E17",
+      "title": "Baseline KPI denominators",
+      "expected": {
+        "kpis": {
+          "actions_on_time": "3 / 7",
+          "overdue_open": "2 / 4",
+          "milestones_on_track": "1 / 3",
+          "vendor_checks": "7 / 8"
+        }
+      },
+      "actual": {
+        "kpis": {
+          "actions_on_time": "3 / 7",
+          "overdue_open": "2 / 4",
+          "milestones_on_track": "1 / 3",
+          "vendor_checks": "7 / 8"
+        }
+      },
+      "pass": true
+    },
+    {
+      "id": "E18",
+      "title": "Board export before any brief is issued",
+      "expected": {
+        "boardExport": "brief_not_issued"
+      },
+      "actual": {
+        "boardExport": "brief_not_issued"
+      },
+      "pass": true
+    },
+    {
+      "id": "E19",
+      "title": "Board export after issue then a change",
+      "expected": {
+        "boardExport": "brief_stale"
+      },
+      "actual": {
+        "boardExport": "brief_stale"
+      },
+      "pass": true
+    },
+    {
+      "id": "E20",
+      "title": "Board export for the issued current brief",
+      "expected": {
+        "boardExport": "ok"
+      },
+      "actual": {
+        "boardExport": "ok"
+      },
+      "pass": true
+    }
+  ]
+}

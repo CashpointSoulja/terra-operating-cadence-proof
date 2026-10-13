@@ -1,0 +1,25 @@
+{
+  "name": "terra-operating-cadence-proof",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "wrangler dev",
+    "typecheck": "tsc -p .",
+    "test": "vitest run",
+    "test:api": "node scripts/api-check.mjs",
+    "eval": "node --experimental-strip-types eval/run.ts",
+    "cf:dry-run": "wrangler deploy --dry-run --outdir dist",
+    "check": "npm run typecheck && npm test && npm run eval && npm run cf:dry-run"
+  },
+  "license": "MIT",
+  "description": "Independent concept by Ayo Ahmed: synthetic vendor onboarding gate and weekly leadership cadence workbench.",
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20261013.1",
+    "@fontsource/rethink-sans": "^5.3.0",
+    "@types/node": "^22.20.5",
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.7",
+    "wrangler": "^4.150.0"
+  },
+  "private": true,
+  "type": "module"
+}

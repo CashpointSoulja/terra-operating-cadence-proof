@@ -1,0 +1,40 @@
+PASS  GET /api/state issues an HttpOnly, Secure, SameSite=Strict visitor cookie  — ocp_vid=<64 hex>; Path=/; HttpOnly; Secure; SameSite=Strict; Max-Age=604800
+PASS  new workspace starts at revision 1 from the synthetic seed
+PASS  API sends content-security-policy
+PASS  API sends x-content-type-options
+PASS  API sends x-frame-options
+PASS  API sends referrer-policy
+PASS  HTML page sends CSP with frame-ancestors none
+PASS  API responses are not cached
+PASS  write without Origin is refused 403  — 403 bad_origin
+PASS  cross-origin write is refused 403  — 403 bad_origin
+PASS  Sec-Fetch-Site cross-site write is refused 403  — 403 bad_origin
+PASS  write without X-OCP-Request header is refused 403  — 403 missing_request_header
+PASS  form-style text/plain write is refused 415  — 415 unsupported_media_type
+PASS  write without a workspace cookie is refused 401  — 401 no_workspace
+PASS  malformed cookie is treated as no workspace  — 401 no_workspace
+PASS  body over 8 KB is refused 413  — 413 body_too_large
+PASS  invalid JSON is refused 400  — 400 invalid_json
+PASS  prototype-pollution key is refused 400  — 400 unknown_field
+PASS  unknown API route returns 404
+PASS  GET on /api/command returns 405
+PASS  blocked vendor cannot be onboarded (422 gate_blocked)  — 422 gate_blocked
+PASS  board export before issuing a brief is refused 409
+PASS  visitor A ticks the critical item (rev 1 → 2)
+PASS  visitor B gets a different workspace cookie
+PASS  visitor B does not see visitor A's change (isolation)
+PASS  visitor B re-reads its own workspace only
+PASS  stale expectedRevision is refused 409 revision_conflict
+PASS  two concurrent writes on one revision: exactly one lands, one gets 409  — 200,409
+PASS  workspace advanced by exactly one revision  — rev 2 → 3
+PASS  ready vendor onboards (simulated receipt)
+PASS  material cost change invalidates onboarding and prior approval
+PASS  approval against an outdated fingerprint is refused 409
+PASS  re-approval recovers: onboarding recorded again
+PASS  current brief issues
+PASS  board export works for the issued current brief
+PASS  audit export lists the seed event plus one event per accepted change, with fingerprints  — 9 events at rev 9
+PASS  readable summary is markdown with denominators and disclaimer
+PASS  more than 120 change attempts a minute are rate limited (429)  — 5 of 125 got 429
+
+38/38 API checks passed

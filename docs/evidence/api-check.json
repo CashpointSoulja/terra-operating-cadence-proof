@@ -1,0 +1,197 @@
+{
+  "base": "http://127.0.0.1:8787",
+  "passed": 38,
+  "total": 38,
+  "results": [
+    {
+      "name": "GET /api/state issues an HttpOnly, Secure, SameSite=Strict visitor cookie",
+      "ok": true,
+      "detail": "ocp_vid=<64 hex>; Path=/; HttpOnly; Secure; SameSite=Strict; Max-Age=604800"
+    },
+    {
+      "name": "new workspace starts at revision 1 from the synthetic seed",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "API sends content-security-policy",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "API sends x-content-type-options",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "API sends x-frame-options",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "API sends referrer-policy",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "HTML page sends CSP with frame-ancestors none",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "API responses are not cached",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "write without Origin is refused 403",
+      "ok": true,
+      "detail": "403 bad_origin"
+    },
+    {
+      "name": "cross-origin write is refused 403",
+      "ok": true,
+      "detail": "403 bad_origin"
+    },
+    {
+      "name": "Sec-Fetch-Site cross-site write is refused 403",
+      "ok": true,
+      "detail": "403 bad_origin"
+    },
+    {
+      "name": "write without X-OCP-Request header is refused 403",
+      "ok": true,
+      "detail": "403 missing_request_header"
+    },
+    {
+      "name": "form-style text/plain write is refused 415",
+      "ok": true,
+      "detail": "415 unsupported_media_type"
+    },
+    {
+      "name": "write without a workspace cookie is refused 401",
+      "ok": true,
+      "detail": "401 no_workspace"
+    },
+    {
+      "name": "malformed cookie is treated as no workspace",
+      "ok": true,
+      "detail": "401 no_workspace"
+    },
+    {
+      "name": "body over 8 KB is refused 413",
+      "ok": true,
+      "detail": "413 body_too_large"
+    },
+    {
+      "name": "invalid JSON is refused 400",
+      "ok": true,
+      "detail": "400 invalid_json"
+    },
+    {
+      "name": "prototype-pollution key is refused 400",
+      "ok": true,
+      "detail": "400 unknown_field"
+    },
+    {
+      "name": "unknown API route returns 404",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "GET on /api/command returns 405",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "blocked vendor cannot be onboarded (422 gate_blocked)",
+      "ok": true,
+      "detail": "422 gate_blocked"
+    },
+    {
+      "name": "board export before issuing a brief is refused 409",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "visitor A ticks the critical item (rev 1 → 2)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "visitor B gets a different workspace cookie",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "visitor B does not see visitor A's change (isolation)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "visitor B re-reads its own workspace only",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "stale expectedRevision is refused 409 revision_conflict",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "two concurrent writes on one revision: exactly one lands, one gets 409",
+      "ok": true,
+      "detail": "200,409"
+    },
+    {
+      "name": "workspace advanced by exactly one revision",
+      "ok": true,
+      "detail": "rev 2 → 3"
+    },
+    {
+      "name": "ready vendor onboards (simulated receipt)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "material cost change invalidates onboarding and prior approval",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "approval against an outdated fingerprint is refused 409",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "re-approval recovers: onboarding recorded again",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "current brief issues",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "board export works for the issued current brief",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "audit export lists the seed event plus one event per accepted change, with fingerprints",
+      "ok": true,
+      "detail": "9 events at rev 9"
+    },
+    {
+      "name": "readable summary is markdown with denominators and disclaimer",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "more than 120 change attempts a minute are rate limited (429)",
+      "ok": true,
+      "detail": "5 of 125 got 429"
+    }
+  ]
+}

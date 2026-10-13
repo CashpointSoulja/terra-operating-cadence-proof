@@ -1,0 +1,68 @@
+
+ RUN  v3.2.7 .
+
+ ✓ test/engine.test.ts > vendor onboarding gate > baseline is blocked only by the open critical bank call-back 2ms
+ ✓ test/engine.test.ts > vendor onboarding gate > one critical item blocks even when most checks pass 1ms
+ ✓ test/engine.test.ts > vendor onboarding gate > refuses simulated onboarding while blocked 5ms
+ ✓ test/engine.test.ts > vendor onboarding gate > onboards once ready and replays idempotently 2ms
+ ✓ test/engine.test.ts > vendor onboarding gate > a material change invalidates approval and onboarding, and re-approval recovers 15ms
+ ✓ test/engine.test.ts > vendor onboarding gate > changing owner makes the existing approval stale 1ms
+ ✓ test/engine.test.ts > vendor onboarding gate > changing scope makes the existing approval stale 1ms
+ ✓ test/engine.test.ts > vendor onboarding gate > changing legal name makes the existing approval stale 0ms
+ ✓ test/engine.test.ts > vendor onboarding gate > changing agreement version makes the existing approval stale 1ms
+ ✓ test/engine.test.ts > vendor onboarding gate > changing category makes the existing approval stale 0ms
+ ✓ test/engine.test.ts > vendor onboarding gate > non-material edits do not change the fingerprint 0ms
+ ✓ test/engine.test.ts > vendor onboarding gate > approvals expire after 90 days 0ms
+ ✓ test/engine.test.ts > vendor onboarding gate > a revoked approval blocks 0ms
+ ✓ test/engine.test.ts > vendor onboarding gate > non-home currency blocks and requires finance review 0ms
+ ✓ test/engine.test.ts > vendor onboarding gate > crossing the finance threshold adds a finance-lead approval 0ms
+ ✓ test/engine.test.ts > vendor onboarding gate > missing cost, owner or agreement each block 1ms
+ ✓ test/engine.test.ts > vendor onboarding gate > expired, unsigned, future-signed and inverted agreements block 1ms
+ ✓ test/engine.test.ts > vendor onboarding gate > agreement close to expiry warns but does not block 0ms
+ ✓ test/engine.test.ts > approval controls > refuses an approver without the role 0ms
+ ✓ test/engine.test.ts > approval controls > refuses self-approval by the accountable owner 0ms
+ ✓ test/engine.test.ts > approval controls > the gate also refuses a stored self-approval 0ms
+ ✓ test/engine.test.ts > approval controls > refuses future-dated approval 0ms
+ ✓ test/engine.test.ts > approval controls > refuses approval against a fingerprint the approver did not see 0ms
+ ✓ test/engine.test.ts > atomic input validation > rejects impossible date 0ms
+ ✓ test/engine.test.ts > atomic input validation > rejects non-ISO date 0ms
+ ✓ test/engine.test.ts > atomic input validation > rejects future checklist date 0ms
+ ✓ test/engine.test.ts > atomic input validation > rejects future close date 0ms
+ ✓ test/engine.test.ts > atomic input validation > rejects negative cost 2ms
+ ✓ test/engine.test.ts > atomic input validation > rejects fractional pennies 0ms
+ ✓ test/engine.test.ts > atomic input validation > rejects cost as string 0ms
+ ✓ test/engine.test.ts > atomic input validation > rejects oversized cost 0ms
+ ✓ test/engine.test.ts > atomic input validation > rejects unknown currency 0ms
+ ✓ test/engine.test.ts > atomic input validation > rejects unknown field 0ms
+ ✓ test/engine.test.ts > atomic input validation > rejects prototype key 0ms
+ ✓ test/engine.test.ts > atomic input validation > rejects empty patch 0ms
+ ✓ test/engine.test.ts > atomic input validation > rejects control characters 0ms
+ ✓ test/engine.test.ts > atomic input validation > rejects over-long title 0ms
+ ✓ test/engine.test.ts > atomic input validation > rejects unknown person 0ms
+ ✓ test/engine.test.ts > atomic input validation > rejects duplicate open action 0ms
+ ✓ test/engine.test.ts > atomic input validation > rejects bad doc ref 0ms
+ ✓ test/engine.test.ts > atomic input validation > rejects array payload 0ms
+ ✓ test/engine.test.ts > atomic input validation > rejects as-of out of range 0ms
+ ✓ test/engine.test.ts > atomic input validation > rejects closing a closed action 0ms
+ ✓ test/engine.test.ts > atomic input validation > rejects unknown command types and envelope fields 1ms
+ ✓ test/engine.test.ts > atomic input validation > rejects a stale revision with 409 and never mutates the input state 0ms
+ ✓ test/engine.test.ts > atomic input validation > a refused multi-field patch changes nothing (all or nothing) 0ms
+ ✓ test/engine.test.ts > bounded state > caps actions at the limit 8ms
+ ✓ test/engine.test.ts > bounded state > keeps at most maxEvents events and counts what it dropped 109ms
+ ✓ test/engine.test.ts > bounded state > rejects malformed stored state 0ms
+ ✓ test/engine.test.ts > weekly cadence and brief > reports explicit denominators 2ms
+ ✓ test/engine.test.ts > weekly cadence and brief > shows no data rather than 0% when the denominator is zero 0ms
+ ✓ test/engine.test.ts > weekly cadence and brief > holds follow-through below the minimum sample and for unowned actions 1ms
+ ✓ test/engine.test.ts > weekly cadence and brief > counts a late close as a miss and a past-due milestone as late 1ms
+ ✓ test/engine.test.ts > weekly cadence and brief > lists unknowns and decision requests 1ms
+ ✓ test/engine.test.ts > weekly cadence and brief > requests approval decisions after a material change 1ms
+ ✓ test/engine.test.ts > weekly cadence and brief > issues only the reviewed version; board export goes stale on any change 4ms
+ ✓ test/engine.test.ts > weekly cadence and brief > brief id is deterministic for the same state 1ms
+ ✓ test/engine.test.ts > weekly cadence and brief > escapes markdown and HTML in the readable summary 1ms
+ ✓ test/engine.test.ts > weekly cadence and brief > summary carries the no-payment, no-legal-advice disclaimer 1ms
+
+ Test Files  1 passed (1)
+      Tests  59 passed (59)
+   Start at  15:56:54
+   Duration  571ms (transform 112ms, setup 0ms, collect 125ms, tests 168ms, environment 0ms, prepare 83ms)
+
