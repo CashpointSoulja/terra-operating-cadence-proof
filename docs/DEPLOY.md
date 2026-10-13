@@ -1,5 +1,7 @@
 # Cloudflare Workers Free: configuration and dry run
 
+> **Historical pre-release record.** This page describes the state before deployment and before the walkthrough was published. The current release record is [LIVE_RELEASE.md](LIVE_RELEASE.md).
+
 Not deployed. This page is for whoever deploys it after an independent review.
 
 ## What it uses

@@ -1,5 +1,7 @@
 # Walkthrough: grounded script and deterministic flow
 
+> **Historical pre-release record.** This page describes the state before deployment and before the walkthrough was published. The current release record is [LIVE_RELEASE.md](../docs/LIVE_RELEASE.md).
+
 No public video is published from this repo. This folder holds what is needed to record one against the running app:
 
 - [SCRIPT.md](SCRIPT.md): first-person narration, one line per caption, with the start times from a local rehearsal run.

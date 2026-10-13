@@ -1,5 +1,7 @@
 # Test results
 
+> **Historical pre-release record.** This page describes the state before deployment and before the walkthrough was published. The current release record is [LIVE_RELEASE.md](LIVE_RELEASE.md).
+
 Run locally on 13 October 2026 with Node 24.19.0 and Wrangler 4.150.0. Raw output for every run is in [docs/evidence/](evidence/). Nothing has been deployed; the API checks ran against `wrangler dev` on 127.0.0.1.
 
 | Check | Command | Result | Raw output |
