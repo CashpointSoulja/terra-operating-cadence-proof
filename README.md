@@ -11,7 +11,7 @@ Scope is civilian administration only: no drone, surveillance, weapons, targetin
 ## Live release
 
 - Live demo: https://terra-operating-cadence-proof.ayoahmed-49d.workers.dev
-- Voiced public walkthrough: https://drive.google.com/file/d/1zzT29lCpgFMcRPvnA_19Kk4FY8gBul54/view?usp=drivesdk&authuser=ayomideahmedcp%40gmail.com
+- Voiced public walkthrough: https://drive.google.com/file/d/1zzT29lCpgFMcRPvnA_19Kk4FY8gBul54/view
 - Release record: [docs/LIVE_RELEASE.md](docs/LIVE_RELEASE.md)
 
 ## What it does

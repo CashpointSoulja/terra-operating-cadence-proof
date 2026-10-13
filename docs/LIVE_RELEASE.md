@@ -3,7 +3,7 @@
 I published and independently checked this concept on 13 October 2026. All people, numbers and scenarios are synthetic. It is an independent portfolio concept, not an affiliated product or production service.
 
 - Live demo: https://terra-operating-cadence-proof.ayoahmed-49d.workers.dev
-- Voiced public walkthrough: https://drive.google.com/file/d/1zzT29lCpgFMcRPvnA_19Kk4FY8gBul54/view?usp=drivesdk&authuser=ayomideahmedcp%40gmail.com
+- Voiced public walkthrough: https://drive.google.com/file/d/1zzT29lCpgFMcRPvnA_19Kk4FY8gBul54/view
 - The video is a 98.4-second recording of the real public demo, not a mockup. It has pointer movement, narration and captions.
 - Video access: anyone with the link can view, verified after upload.
 - Reviewed code commit: `e954eb6fbd1fa4dd32d5b449afc075554434beb6`
