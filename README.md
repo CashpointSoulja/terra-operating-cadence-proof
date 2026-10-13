@@ -58,7 +58,7 @@ Pre-release local results (historical): [docs/TEST_RESULTS.md](docs/TEST_RESULTS
 |---|---|
 | Research | [Source ledger](docs/research/SOURCE_LEDGER.md) |
 | Design | [design.md](docs/design/design.md), [visual guide](docs/design/visual-guide.html) ([desktop](docs/design/visual-guide-desktop.png), [mobile](docs/design/visual-guide-mobile.png)) |
-| Product | [PRD](docs/pm/PRD.md), [Discovery questions](docs/pm/DISCOVERY_QUESTIONS.md), [Hypotheses](docs/pm/HYPOTHESES.md), [Metrics](docs/pm/METRICS.md), [Trade-offs](docs/pm/TRADEOFFS.md), [Risks](docs/pm/RISKS.md), [Role viability](docs/pm/ROLE_VIABILITY.md), [v2 plan](docs/pm/V2_PLAN.md) |
+| Product | [PRD](docs/pm/PRD.md), [Discovery questions](docs/pm/DISCOVERY_QUESTIONS.md), [Hypotheses](docs/pm/HYPOTHESES.md), [Metrics](docs/pm/METRICS.md), [Trade-offs](docs/pm/TRADEOFFS.md), [Risks](docs/pm/RISKS.md), [Role viability](docs/pm/ROLE_VIABILITY.md), [v2 plan](docs/pm/V2_PLAN.md), [ELI5](docs/pm/ELI5.md), [Five whys](docs/pm/FIVE_WHYS.md), [Assumptions](docs/pm/ASSUMPTIONS.md), [Build versus buy](docs/pm/BUILD_VS_BUY.md), [Decision log](docs/pm/DECISION_LOG.md), [Jobs to be done](docs/pm/JTBD.md) |
 | Evidence | [Live release](docs/LIVE_RELEASE.md), [Test results (pre-release)](docs/TEST_RESULTS.md), [Evaluation results](eval/RESULTS.md), [raw outputs](docs/evidence/) |
 | Walkthrough | [Script and deterministic flow](video/README.md) (pre-release); published walkthrough: see [Live release](docs/LIVE_RELEASE.md) |
 
